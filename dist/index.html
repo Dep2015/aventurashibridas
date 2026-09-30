@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-DlGZlh3x.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B__tRYtZ.css">
+  <script type="module" crossorigin src="./assets/index-CBcXhNbO.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-H4Pi96bk.css">
 </head>
 <body>
 <div class="wrap">
@@ -64,24 +64,9 @@
     </div>
   </div>
   </div>
-  <div class="help">
-    <span><kbd>←</kbd><kbd>→</kbd> moverse</span>
-    <span><kbd>Z</kbd> o <kbd>Espacio</kbd> saltar (mantén para más altura)</span>
-    <span><kbd>X</kbd> o <kbd>Shift</kbd> correr</span>
-    <span><kbd>C</kbd> lanzar (galletas, bastón, plasma)</span>
-    <span><kbd>V</kbd> lanzar el báculo</span>
-    <span class="fly-help"><kbd>↑</kbd><kbd>↓</kbd> volar (nivel 2)</span>
-    <span><kbd>Z</kbd> abrir o elegir (nivel 3)</span>
-    <span>Muqui Z: <kbd>1</kbd> látigo · <kbd>2</kbd> báculo · <kbd>3</kbd> plasma</span>
-    <span><kbd>Shift</kbd> esquivar · <kbd>Q</kbd> quipu · <kbd>E</kbd> Casino</span>
-    <span>Cusco: <kbd>Z</kbd> champi/hablar · <kbd>X</kbd> escudo · <kbd>Shift</kbd> fijar · <kbd>Espacio</kbd> rodar · <kbd>Q</kbd> quena</span>
-    <span>Round 2: <kbd>Z</kbd> puño · <kbd>X</kbd> patada · atrás: cubrirse · <kbd>P</kbd>+<kbd>O</kbd> balón de gas · <kbd>P</kbd>+<kbd>M</kbd> plasma de los tres</span>
-  </div>
-  <div class="touch" id="touch">
-    <div class="grp"><button data-k="left" aria-label="Izquierda">◀</button><button data-k="right" aria-label="Derecha">▶</button></div>
-    <div class="grp"><button data-k="fire" aria-label="Lanzar">🍪</button><button data-k="fire2" aria-label="Lanzar el báculo">V</button><button data-k="down" aria-label="Bajar">▼</button><button data-k="run" class="wide" aria-label="Correr">Run</button><button data-k="jump" aria-label="Saltar">▲</button></div>
-    <div class="grp g4"><button data-k="atk" aria-label="Golpe o hablar">Z</button><button data-k="shield" aria-label="Escudo">🛡</button><button data-k="act" aria-label="Galleta">🍪</button><button data-k="lock" aria-label="Fijar enemigo">◎</button><button data-k="roll" aria-label="Rodar">↻</button><button data-k="quena" aria-label="Quena">♪</button><button data-k="casino" aria-label="Casino">E</button></div>
-  </div>
+  <!-- ayuda de teclas y botones táctiles: los arma src/input.js según el nivel (setControls) -->
+  <div class="help" id="help"></div>
+  <div class="touch" id="touch"></div>
 </div>
 
 </body>
