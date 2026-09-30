@@ -1,0 +1,8 @@
+services:
+  xoxur:
+    build: .
+    image: xoxur-game
+    container_name: xoxur_game
+    ports:
+      - "8080:80"
+    restart: unless-stopped

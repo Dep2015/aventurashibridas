@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aventuras Híbridas — Nivel 1: los Andes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-DlGZlh3x.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B__tRYtZ.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><img class="logo" src="assets/ui/logo.png" alt="Aventuras Híbridas" width="560" height="155"></h1>
+    <p id="lvlName">Nivel 1 · Cordillera</p>
+  </header>
+  <div class="rotate-hint" role="note"><span class="ph" aria-hidden="true">📱</span>Gira el celular para jugar en horizontal y a pantalla completa.</div>
+  <div class="play">
+  <!-- panel del jugador, fuera del campo de juego: retrato, energía, tiempo, puntos y monedas -->
+  <aside class="side" id="side" aria-label="Estado del jugador">
+    <div class="portrait"><span class="hud-face" id="hudFace"></span></div>
+    <div class="hp" role="meter" aria-label="Energía" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="hpMeter">
+      <div class="hp-fill" id="hpFill"></div><span class="hp-text" id="hpText">100</span>
+    </div>
+    <!-- vida del jefe: aparece al llegar a la arena -->
+    <div class="boss-side" id="bossSide" hidden>
+      <div class="portrait boss-portrait"><span class="boss-face" id="bossFace"></span></div>
+      <div class="boss-name" id="bossName">Inka Locu</div>
+      <div class="hp boss" role="meter" aria-label="Vida del jefe" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="bossMeter">
+        <div class="hp-fill" id="bossFill"></div><span class="hp-text" id="bossText">100</span>
+      </div>
+    </div>
+    <dl class="stats-side">
+      <div><dt>Tiempo</dt><dd id="hudTime">300</dd></div>
+      <div><dt>Puntos</dt><dd id="hudScore">000000</dd></div>
+      <div><dt>Monedas</dt><dd id="hudCoins">0</dd></div>
+    </dl>
+  </aside>
+  <div class="stage">
+    <div id="game"></div>
+    <!-- portada: se muestra al abrir el juego, antes del selector de personaje -->
+    <div class="splash" id="splash">
+      <div class="splash-art">
+        <img src="assets/ui/portada.jpg" alt="Aventuras Híbridas — Level 1: los personajes rodeados de zombis andinos en una plaza colonial">
+        <button class="start" id="startBtn" type="button">Comenzar</button>
+      </div>
+    </div>
+    <div class="overlay" id="ov" hidden>
+      <div class="card">
+        <h2 id="ovTitle">Nivel 1</h2>
+        <p id="ovText">Elige personaje. Pisa a los enemigos o lánzales galletas con C. Empiezas con 100 de energía. Sube el cerro: en la cima te esperan Inka Locu y El Sacrificador.</p>
+        <div class="stats" id="ovStats" hidden></div>
+        <div class="pick" role="group" aria-label="Elige personaje">
+          <button class="who" data-c="xoxur" aria-pressed="true"><span class="face" data-c="xoxur"></span>Xoxur</button>
+          <!-- bloqueados por ahora: se ven pero no se pueden elegir (se trabaja solo con Xoxur) -->
+          <button class="who locked" data-c="litbru" aria-pressed="false" aria-disabled="true" title="Próximamente"><span class="face" data-c="litbru"></span>Litbru<span class="lock">🔒 Pronto</span></button>
+          <button class="who locked" data-c="dominga" aria-pressed="false" aria-disabled="true" title="Próximamente"><span class="face" data-c="dominga"></span>Dominga<span class="lock">🔒 Pronto</span></button>
+        </div>
+        <button class="btn" id="ovBtn">Jugar</button>
+        <p class="rot-note">📱 Gira el celular para jugar en horizontal.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="help">
+    <span><kbd>←</kbd><kbd>→</kbd> moverse</span>
+    <span><kbd>Z</kbd> o <kbd>Espacio</kbd> saltar (mantén para más altura)</span>
+    <span><kbd>X</kbd> o <kbd>Shift</kbd> correr</span>
+    <span><kbd>C</kbd> lanzar (galletas, bastón, plasma)</span>
+    <span><kbd>V</kbd> lanzar el báculo</span>
+    <span class="fly-help"><kbd>↑</kbd><kbd>↓</kbd> volar (nivel 2)</span>
+    <span><kbd>Z</kbd> abrir o elegir (nivel 3)</span>
+    <span>Muqui Z: <kbd>1</kbd> látigo · <kbd>2</kbd> báculo · <kbd>3</kbd> plasma</span>
+    <span><kbd>Shift</kbd> esquivar · <kbd>Q</kbd> quipu · <kbd>E</kbd> Casino</span>
+    <span>Cusco: <kbd>Z</kbd> champi/hablar · <kbd>X</kbd> escudo · <kbd>Shift</kbd> fijar · <kbd>Espacio</kbd> rodar · <kbd>Q</kbd> quena</span>
+    <span>Round 2: <kbd>Z</kbd> puño · <kbd>X</kbd> patada · atrás: cubrirse · <kbd>P</kbd>+<kbd>O</kbd> balón de gas · <kbd>P</kbd>+<kbd>M</kbd> plasma de los tres</span>
+  </div>
+  <div class="touch" id="touch">
+    <div class="grp"><button data-k="left" aria-label="Izquierda">◀</button><button data-k="right" aria-label="Derecha">▶</button></div>
+    <div class="grp"><button data-k="fire" aria-label="Lanzar">🍪</button><button data-k="fire2" aria-label="Lanzar el báculo">V</button><button data-k="down" aria-label="Bajar">▼</button><button data-k="run" class="wide" aria-label="Correr">Run</button><button data-k="jump" aria-label="Saltar">▲</button></div>
+    <div class="grp g4"><button data-k="atk" aria-label="Golpe o hablar">Z</button><button data-k="shield" aria-label="Escudo">🛡</button><button data-k="act" aria-label="Galleta">🍪</button><button data-k="lock" aria-label="Fijar enemigo">◎</button><button data-k="roll" aria-label="Rodar">↻</button><button data-k="quena" aria-label="Quena">♪</button><button data-k="casino" aria-label="Casino">E</button></div>
+  </div>
+</div>
+
+</body>
+</html>
